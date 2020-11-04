@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <p class="text-uppercase">Se détendre et un peu plus</p>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    
+    <p>Les couches:</p>
+
+    <ion-button color="warning" (click)="ShowLayerBancs()" class="btn btn-primary">{{layerClustersBancs.getVisible()?'Cacher':'Montrer'}} Bancs</ion-button>
+    <ion-button color="dark" (click)="ShowLayerDechets()" class="btn btn-primary">{{layerClustersDechets.getVisible()?'Cacher':'Montrer'}} Dechets</ion-button>
+    <ion-button color="medium" (click)="ShowLayerPoubelles()" class="btn btn-primary">{{layerClustersPoubelles.getVisible()?'Cacher':'Montrer'}} Poubelles</ion-button>
+    <ion-button color="success" (click)="ShowLayerArbres()" class="btn btn-primary">{{layerClustersArbres.getVisible()?'Cacher':'Montrer'}} Arbres</ion-button>
+    <ion-button color="light" (click)="ShowLayerToilettes()" class="btn btn-primary">{{layerClustersToilettes.getVisible()?'Cacher':'Montrer'}} Toilettes</ion-button>
+
+  </div>
+  <div id="map" class="map1"></div>
+  <div style="text-align:center">
+
+
+  </div>
+</ion-content>

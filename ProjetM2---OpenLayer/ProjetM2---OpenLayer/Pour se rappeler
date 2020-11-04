@@ -1,0 +1,13 @@
+Pour se souvenir comment marche le gros bazar :
+
+Lancer le serveur angular -                             ionic serve
+Compiler en .apk -                                      ionic cordova build android
+lancer emulator -                                       emulator -avd Nexus_5X_API_22
+lancer sur l'emulateur -                                adb install -r app-debug.apk
+Eviter les problèmes de droits -                        sudo chmod -R 777 .
+démarrer geoserver -                                    $GEOSERVER_HOME/bin/startup.sh ( user : admin - password : geoserver )
+ouvrir le chargeur de shapefiles -                      shp2pgsql-gui
+
+jeux de données :
+
+ouvrir interpreteur -                                   sudo -u postgres psql

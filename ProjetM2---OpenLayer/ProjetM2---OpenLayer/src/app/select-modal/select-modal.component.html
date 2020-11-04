@@ -1,0 +1,75 @@
+<!-- <ion-header>
+  <ion-toolbar text-center>
+    <ion-title>{{modalTitle}}</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<!-- <p *ngif="">Id: {{features[0].getId()}} </p> -->
+
+<p *ngIf="features[0].getId().includes('bancs')">
+  Id:{{features[0].getId()}} <br> 
+  Secteur:{{features[0].getProperties().banc_secteur}} <br>
+  Detail:{{features[0].getProperties().banc_detail}} <br>
+  Localisation:{{features[0].getProperties().banc_loc}}<br>
+  Remarque:{{features[0].getProperties().banc_remarque}} <br>
+</p>
+
+<p *ngIf="features[0].getId().includes('poubelles')">
+  Id:{{features[0].getId()}} <br> 
+  Type:{{features[0].getProperties().corbeille_t}}<br>
+  Lieu: {{features[0].getProperties().corbeille_l}}<br>
+  Lieu suite:{{features[0].getProperties().corbeille_s}}<br>
+  Mode Condition:{{features[0].getProperties().mode_cond}}
+</p>
+
+<p *ngIf="features[0].getId().includes('arbres')">
+  Id:{{features[0].getId()}} <br> 
+  Code Commune:{{features[0].getProperties().codcomm}}<br>
+  Nom du site: {{features[0].getProperties().nom_site}}<br>
+  Espece:{{features[0].getProperties().espece}}<br>
+  Mode Condition:{{features[0].getProperties().mode_cond}}
+</p>
+
+<p *ngIf="features[0].getId().includes('toilettes')">
+  Id:{{features[0].getId()}} <br> 
+  Secteur:{{features[0].getProperties().san_sect}}<br>
+  Lieu: {{features[0].getProperties().san_gest}}<br>
+  Lieu suite:{{features[0].getProperties().san_loc}}<br>
+</p>
+
+<p *ngIf="features[0].getId().includes('dechets')">
+  Id:{{features[0].getId()}} <br> 
+  Type déchet:{{features[0].getProperties().type_flux}}<br>
+  Lieu: {{features[0].getProperties().code_commu}}<br>
+  Lieu suite: suite:{{features[0].getProperties().rue}}<br>
+</p>
+
+<ion-button (click)="closeModal()">Retour</ion-button>                
+
+<ion-radio-group (ionChange)="radioGroupChange($event)">
+  <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Degradation</ion-label>
+          <ion-radio slot="start" value="deg" checked></ion-radio>
+        </ion-item>
+      </ion-col>
+      <ion-col *ngIf="features[0].getId().includes('arbres')">
+        <ion-item>
+          <ion-label>Ajout Image Arbre</ion-label>
+          <ion-radio slot="start" value="addim"></ion-radio>
+        </ion-item>
+      </ion-col>
+  </ion-row>
+</ion-radio-group>
+
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col text-center>
+        <ion-button (click)="valideModal()">Valider</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

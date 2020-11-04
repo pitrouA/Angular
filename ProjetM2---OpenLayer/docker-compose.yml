@@ -1,0 +1,12 @@
+version: '3'
+services:
+  ionic:
+    build: ./ProjetM2---OpenLayer
+    hostname: ionic
+    ports:
+      - "8100:8100"
+  server:
+    build: ./serverSujetProj2
+    hostname: server
+    ports:
+      - "8081:8081"
