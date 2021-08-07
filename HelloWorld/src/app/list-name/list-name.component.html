@@ -1,0 +1,17 @@
+
+<input [(ngModel)]="name" placeholder="name"/>
+<button (click)="addPerson(name)">Save</button>
+
+<div>
+  <ul >
+    <li *ngFor="let person of persons" (click)="onSelect(person)">
+      <span class="badge">{{person.id}}</span> {{person.name}}
+    </li>
+  </ul>
+</div>
+
+<div>
+  <label>name:
+    <input [(ngModel)]="selectedPerson.name" placeholder="name"/>
+  </label>
+</div>
